@@ -1,1 +1,3 @@
-console.log("Testing Config Setup");
+import loadHeader from "./page_layout.js";
+
+loadHeader();

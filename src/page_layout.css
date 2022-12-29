@@ -1,0 +1,44 @@
+@import url("./styles.css");
+
+header {
+    height: 40px;
+    background-color: var(--main-red);
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    padding: 10px;
+    font-family: "Roboto";
+}
+
+header p {
+    margin: 0px;
+    color: var(--floral-white);
+}
+
+#todo-title {
+    font-size: 2rem;
+    align-self: center;
+    font-weight: bold;
+}
+
+#signiture {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+}
+
+#signiture a {
+    width: 20px;
+    height: 20px;
+    transition: 0.1s;
+}
+
+#signiture img {
+    width: 100%;
+}
+
+#signiture a:hover {
+    width: 30px;
+    height: 30px;
+}
+
