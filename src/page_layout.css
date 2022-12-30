@@ -54,6 +54,9 @@ header p {
     padding: var(--padding);
     width: 200px;
     height: calc(100% - var(--padding)*2);
+    background-color: white;
+    box-shadow: 1px 0px 3px #f9c1c1;
+    clip-path: inset(0px -5px 0px 0px);
 }
 
 #default-selection {
