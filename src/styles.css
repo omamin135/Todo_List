@@ -13,11 +13,14 @@
 }
 
 * {
-    --main-red: #FD6F6F;
-    --floral-white: #FEF8EC;
-    --wintergreen: #528E7C;
+    --primary: #FC4A4A;
+    --light-background: #FFEBEB;
+    --accent: #528E7C;
 }
 
 body {
     margin: 0px;
+    height: 100vh;
+    font-family: "Roboto";
 }
+

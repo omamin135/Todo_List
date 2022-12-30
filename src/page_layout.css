@@ -1,17 +1,16 @@
 @import url("./styles.css");
 
 header {
-    height: 40px;
-    background-color: var(--main-red);
+    height: 8%;
+    background-color: var(--primary);
     display: grid;
     grid-template: 1fr / 1fr 1fr;
-    padding: 10px;
-    font-family: "Roboto";
+    padding: 0px 15px;
 }
 
 header p {
     margin: 0px;
-    color: var(--floral-white);
+    color: white;
 }
 
 #todo-title {
@@ -41,4 +40,69 @@ header p {
     width: 30px;
     height: 30px;
 }
+
+#content {
+    height: 92%;
+}
+
+#content p {
+    margin: 0px;
+}
+
+#left-menu {
+    --padding: 15px;
+    padding: var(--padding);
+    width: 200px;
+    height: calc(100% - var(--padding)*2);
+}
+
+#default-selection {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#default-selection > * {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#default-selection > *:hover {
+    background-color: var(--light-background);
+    cursor: pointer;
+}
+
+#project-selection {
+    font-size: 1.2rem;
+}
+
+#project-selection > p {
+    font-weight: bold;
+    padding-left: 5px;
+    color: var(--primary)
+}
+
+#projects {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+#projects .project {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 4px;  
+}
+
+#projects .project > *:nth-child(2) {
+    color: var(--primary);
+}
+
+#projects .project:hover {
+    background-color: var(--light-background);
+    cursor: pointer;
+}
+
+
 
