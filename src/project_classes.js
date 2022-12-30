@@ -33,18 +33,4 @@ class Project {
     }
 }
 
-class Projects {
-    constructor(){
-        this.projects = [];
-    }
-
-    addProject(project){
-        this.projects.push(project);
-    }
-
-    removeProject(index){
-        this.projects.splice(index, 1);
-    }
-}
-
-export {Todo, Project, Projects}
+export {Todo, Project}

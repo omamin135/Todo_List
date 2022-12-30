@@ -1,5 +1,5 @@
 import style from "./page_layout.css";
-import githubImg from "./assets/github-mark.svg";
+import githubImg from "../assets/github-mark.svg";
 
 
 function loadHeader() {
@@ -87,28 +87,35 @@ function loadProjectSelections(){
     let ul = document.createElement("ul");
     ul.id = "projects";
 
-    ul.appendChild(createProject(1));
-    ul.appendChild(createProject(2));
-
     projectSelDiv.appendChild(ul);
     return projectSelDiv;
 }
 
-function createProject(id) {
+function createProject(proj) {
 
     let li = document.createElement("li");
     li.className = "project";
-    li.setAttribute("data-it", 1);
+    li.setAttribute("data-name", proj.name);
 
     let p = document.createElement("p");
-    p.textContent = "Project 2";
+    p.textContent = proj.name;
     li.appendChild(p);
 
     p = document.createElement("p");
-    p.textContent = 0;
+    p.textContent = proj.numItems;
     li.appendChild(p);
 
     return li;
+}
+
+function loadProjectsMenu(Dir){
+
+    const ul = document.getElementById("projects");
+
+    for (let i = 0; i < Dir.projects.length; i++){
+        let li = createProject(Dir.projects[i]);
+        ul.append(li);
+    }
 }
 
 function loadPage(){
@@ -117,3 +124,4 @@ function loadPage(){
 }
 
 export default loadPage;
+export {loadProjectsMenu};
