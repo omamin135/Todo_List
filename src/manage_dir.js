@@ -6,8 +6,8 @@ class Projects {
         this.activeProj = 0;
     }
 
-    addProject(project){
-        this.projects.push(project);
+    addProject(name){
+        this.projects.push(new Project(name));
     }
 
     removeProject(index){

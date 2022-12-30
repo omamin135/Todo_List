@@ -88,7 +88,50 @@ function loadProjectSelections(){
     ul.id = "projects";
 
     projectSelDiv.appendChild(ul);
+
+    
+    projectSelDiv.appendChild(addNewProjectButton());
+
     return projectSelDiv;
+}
+
+function addNewProjectButton(){
+    let newProjButton = document.createElement("div");
+    newProjButton.className = "new-project";
+    newProjButton.setAttribute("data-inputMode", "false");
+    let p = document.createElement("p");
+    p.textContent = "New Project ";
+    newProjButton.appendChild(p);
+    p = document.createElement("p");
+    p.textContent = "+";
+    p.id = "new-proj-button";
+    
+    newProjButton.appendChild(p);
+
+    return newProjButton;
+}
+
+function addNewProjectInput(){
+    let newProj = document.querySelector(".new-project");
+    newProj.setAttribute("data-inputMode", "true");
+    let input = document.createElement("input");
+    input.type = "text";
+    input.id = "new-project-input";
+    input.setAttribute("required", "");
+    newProj.replaceChild(input, newProj.firstChild);
+}
+
+function replaceNewProjectInput(){
+    let newProj = document.querySelector(".new-project");
+    newProj.setAttribute("data-inputMode", "false");
+    let p = document.createElement("p");
+    p.textContent = "New Project";
+
+    let val = newProj.firstChild.value;
+
+    newProj.replaceChild(p, newProj.firstChild);
+
+    return val;
 }
 
 function createProject(proj) {
@@ -111,8 +154,12 @@ function createProject(proj) {
 function loadProjectsMenu(Dir){
 
     const ul = document.getElementById("projects");
+    let numChildren = ul.children.length;
 
     for (let i = 0; i < Dir.projects.length; i++){
+        if (i < numChildren){
+            ul.removeChild(ul.firstChild);
+        }
         let li = createProject(Dir.projects[i]);
         ul.append(li);
     }
@@ -124,4 +171,4 @@ function loadPage(){
 }
 
 export default loadPage;
-export {loadProjectsMenu};
+export {loadProjectsMenu, addNewProjectInput, replaceNewProjectInput};
