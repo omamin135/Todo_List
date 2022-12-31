@@ -55,7 +55,7 @@ header p {
     width: 200px;
     height: calc(100% - var(--padding)*2);
     background-color: white;
-    box-shadow: 1px 0px 3px #f9c1c1;
+    box-shadow: 1px 0px 3px var(--shadow);
     clip-path: inset(0px -5px 0px 0px);
 }
 
@@ -72,7 +72,7 @@ header p {
 }
 
 #default-selection > *:hover {
-    background-color: var(--light-background);
+    background-color: var(--light-accent);
     font-size: 1.3rem;
     cursor: pointer;
 }
@@ -106,7 +106,7 @@ header p {
 }
 
 #projects .project:hover {
-    background-color: var(--light-background);
+    background-color: var(--light-accent);
     font-size: 1.1rem;
     cursor: pointer;
 }
@@ -118,6 +118,7 @@ header p {
     justify-content: center;
     align-items: center;
     margin-top: -10px;
+    transition: 0.1s;
 }
 
 .new-project > p {
@@ -135,12 +136,12 @@ header p {
     line-height: 30px;
     font-size: 1.3rem;
     margin-left: -20px;
-    transition: 0.1s;
+    
 }
 
-#new-proj-button:hover {
+.new-project:hover {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 
 

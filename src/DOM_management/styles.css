@@ -14,8 +14,10 @@
 
 * {
     --primary: #FC4A4A;
-    --light-background: #FFEBEB;
+    --light-background: #fffafa; /*#FFEBEB*/
     --accent: #528E7C;
+    --light-accent: #7dc0ac;
+    --shadow: #fddddd; /*#f9c1c1*/
 }
 
 body {

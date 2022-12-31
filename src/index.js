@@ -5,6 +5,9 @@ import Dir from "./manage_dir.js";
 loadPage();
 loadProjectsMenu(Dir);
 
+/*
+ * Event handling for creating a new project
+ */
 const newProjectButton = document.getElementById("new-proj-button");
 newProjectButton.addEventListener("click", () => {
     if(newProjectButton.parentElement.dataset.inputmode === "false"){
