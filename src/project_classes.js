@@ -18,8 +18,9 @@ class Todo {
 }
 
 class Project {
-    constructor(name){
+    constructor(name, numOfProjects){
         this.name = name;
+        this.id =numOfProjects;
         this.numItems = 0;
         this.items = [];
     };

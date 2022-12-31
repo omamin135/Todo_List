@@ -138,7 +138,7 @@ function createProject(proj) {
 
     let li = document.createElement("li");
     li.className = "project";
-    li.setAttribute("data-name", proj.name);
+    li.setAttribute("data-id", proj.id);
 
     let p = document.createElement("p");
     p.textContent = proj.name;
