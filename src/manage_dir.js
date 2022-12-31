@@ -1,9 +1,13 @@
-import {Project} from "./project_classes.js";
+import {Todo, Project} from "./project_classes.js";
 
 class Projects {
     constructor(){
         this.projects = [new Project("default", 0)];
-        this.activeProj = 0;
+        this.activeProjIndex = 0;
+    }
+
+    activeProject(){
+        return this.projects[this.activeProjIndex];
     }
 
     addProject(name){
@@ -12,16 +16,22 @@ class Projects {
 
     removeProject(index){
         this.projects.splice(index, 1);
-        if (this.activeProj === index){
-            this.activeProj--;
+        if (this.activeProjIndex === index){
+            this.activeProjIndex--;
         }
     }
 
     setActive(index){
-        this.activeProj = index;
+        this.activeProjIndex = index;
+    }
+
+    addToActive(todo){
+        this.projects[this.activeProjIndex].addTodo(todo)
     }
 }
 
 let Dir = new Projects();
+Dir.addToActive(new Todo("testing", "none", "none", "high"));
+
 
 export default Dir;

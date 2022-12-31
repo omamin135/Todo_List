@@ -43,10 +43,7 @@ header p {
 
 #content {
     height: 92%;
-}
-
-#content p {
-    margin: 0px;
+    display: flex;
 }
 
 #left-menu {
@@ -57,6 +54,12 @@ header p {
     background-color: white;
     box-shadow: 1px 0px 3px var(--shadow);
     clip-path: inset(0px -5px 0px 0px);
+    position: relative;
+    z-index: 500;
+}
+
+#left-menu p {
+    margin: 0px;
 }
 
 #default-selection {

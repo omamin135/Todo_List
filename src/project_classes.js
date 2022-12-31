@@ -22,15 +22,15 @@ class Project {
         this.name = name;
         this.id =numOfProjects;
         this.numItems = 0;
-        this.items = [];
+        this.todo = [];
     };
 
-    addItem(item){
-        this.items.push(item);
+    addTodo(todo){
+        this.todo.push(todo);
     }
 
-    removeItem(index){
-        this.items.splice(index, 1);
+    removeTodo(index){
+        this.todo.splice(index, 1);
     }
 }
 
