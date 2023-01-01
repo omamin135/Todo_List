@@ -2,7 +2,7 @@ import loadPage from "./DOM_management/page_layout.js"
 import { loadProjectsMenu, addNewProjectInput, replaceNewProjectInput} from "./DOM_management/page_layout.js";
 import Dir from "./manage_dir.js";
 import loadProjPage from "./DOM_management/render_active_project.js";
-import {loadCard, newCard} from "./DOM_management/todo_card.js";
+import {loadCard, newCard, removeEditCard} from "./DOM_management/todo_card.js";
 
 
 loadPage();
@@ -48,5 +48,11 @@ newProjectButton.addEventListener("click", () => {
 /* event listener for new-todo button */
 document.getElementById("new-todo").addEventListener("click", () => {
     newCard(Dir.projects[0].todo[0]);
+    
+    document.getElementById("submit-card").onclick = function processNewCard(){
+        removeEditCard();
+    }
 })
+
+
 

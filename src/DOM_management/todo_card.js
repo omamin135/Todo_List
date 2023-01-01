@@ -131,16 +131,22 @@ function newCard(todo){
     priorityContainer.appendChild(prioritySlider);
     priorityContainer.appendChild(priorityIndicator);
 
+    let submit = document.createElement("button");
+    submit.id = "submit-card";
+    submit.textContent = "add Todo";
+
     cardContainer.appendChild(titleDateContainer);
     cardContainer.appendChild(descriptionContainer);
     cardContainer.appendChild(priorityContainer);
+    cardContainer.appendChild(submit);
 
     newCardBackground.appendChild(cardContainer)
 
     document.querySelector("body").appendChild(newCardBackground);
 }
 
+function removeEditCard(){
+    document.getElementById("new-card-back").remove();
+}
 
-
-
-export {loadCard, newCard};
+export {loadCard, newCard, removeEditCard};
