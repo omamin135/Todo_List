@@ -1,0 +1,111 @@
+@import url("./styles.css");
+
+.card {
+    background-color: white;
+    width: 260px;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+    display: grid;
+    grid-template: 40px 60px 1fr / 1fr 1fr;
+    border-radius: 10px;
+}
+
+.description-container {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin: 0px;
+}
+
+.card-date {
+    font-size: 0.8rem;
+    margin-top: 0px;
+    color: var(--accent);
+}
+
+.complete-container {
+    display: flex;
+    justify-content: right;
+}
+
+.complete-input {
+    height: 16px;
+    width: 16px;
+    margin: 0px 5px 0px 0px;
+}
+
+.complete-container > p {
+    margin: 0px;
+    font-size: 0.8rem;
+}
+
+.description {
+    font-size: 0.8rem;
+    margin-bottom: 0px;
+    margin-top: 13px;
+}
+
+.expand {
+    margin-top: 7px;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.edit-container {
+    position: relative;
+}
+
+.edit {
+    height: 20px;
+    color: gray;
+    position: absolute;
+    bottom: 0px;
+    font-size: 0.8rem;
+}
+
+.priority-container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    width: 100px;
+    justify-self: end;
+}
+
+.priority-container > p:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.priority-slider {
+    background-color: var(--light-background);
+    width: 60px;
+    height: 20px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.priority-icon {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 10px;
+    margin: 2px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.priority-container > p:nth-child(3){
+    margin: 0px;
+    height: 24px;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    line-height: 24px;
+    color: red;
+}

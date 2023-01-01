@@ -2,11 +2,13 @@ import loadPage from "./DOM_management/page_layout.js"
 import { loadProjectsMenu, addNewProjectInput, replaceNewProjectInput} from "./DOM_management/page_layout.js";
 import Dir from "./manage_dir.js";
 import loadProjPage from "./DOM_management/render_active_project.js";
+import loadNewCard from "./DOM_management/todo_card.js";
 
 
 loadPage();
 loadProjectsMenu(Dir);
 loadProjPage();
+loadNewCard(Dir.projects[0].todo[0]);
 
 
 /*
