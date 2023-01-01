@@ -23,6 +23,8 @@ function generateProjectPage(){
     let checklistContainer = document.createElement("div");
     checklistContainer.id = "checklist-container";
 
+    cardsContainer.appendChild(newTodoButton());
+
     projectContent.appendChild(cardsContainer);
     projectContent.appendChild(checklistContainer);
     
@@ -31,6 +33,19 @@ function generateProjectPage(){
     projectPage.appendChild(projectContent);
     document.getElementById("content").appendChild(projectPage);
 
+}
+
+function newTodoButton(){
+    
+    let newTodo = document.createElement("div");
+    newTodo.id = "new-todo";
+
+    let p = document.createElement("p");
+    p.textContent = "+";
+
+    newTodo.appendChild(p);
+
+    return newTodo;
 }
 
 export default generateProjectPage;
