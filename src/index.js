@@ -45,6 +45,7 @@ newProjectButton.addEventListener("click", () => {
     }
 });
 
+/* event listener for new-todo button */
 document.getElementById("new-todo").addEventListener("click", () => {
     newCard(Dir.projects[0].todo[0]);
 })
