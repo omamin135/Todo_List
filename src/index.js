@@ -51,14 +51,18 @@ document.getElementById("new-todo").addEventListener("click", () => {
     newCard(Dir.projects[0].todo[0]);
     
     document.getElementById("submit-card").onclick = function processNewCard(){
-        Dir.addToActive(new Todo(document.querySelector(".edit-card.card-title").value,
+        
+        let titleNode = document.querySelector(".edit-card.card-title");
+        if (titleNode.checkValidity() && titleNode.value.length > 0){
+        Dir.addToActive(new Todo(titleNode.value,
                                  document.querySelector(".edit-card.card-date").value,
                                  document.querySelector(".edit-card.description").value,
                                  "high"
                                  ))
         removeEditCard();
         console.log(Dir.activeProject());
-        loadCard(Dir.projects[Dir.activeProjIndex].todo[Dir.projects.length-1]);
+        loadCard(Dir.activeProject().todo[Dir.activeProject().numItems-1]);
+        }
     }
 })
 

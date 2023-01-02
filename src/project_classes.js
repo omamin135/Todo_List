@@ -27,10 +27,12 @@ class Project {
 
     addTodo(todo){
         this.todo.push(todo);
+        this.numItems++;
     }
 
     removeTodo(index){
         this.todo.splice(index, 1);
+        this.numItems--;
     }
 }
 

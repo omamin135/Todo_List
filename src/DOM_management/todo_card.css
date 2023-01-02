@@ -146,6 +146,10 @@
     justify-content: left;
 }
 
+.edit-card.card-title:invalid {
+    border: 5px solid red;
+}
+
 .edit-card.card-date {
     width: 100px;
     margin-top: 5px;

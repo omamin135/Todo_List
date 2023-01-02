@@ -86,10 +86,10 @@ function newCard(todo){
     titleDateContainer.classList.add("edit-card");
     titleDateContainer.classList.add("title-date-container")
     let cardTitle = document.createElement("input");
+    cardTitle.pattern = "[\\w\\d ]*";
     cardTitle.type = "text";
     cardTitle.classList.add("edit-card");
     cardTitle.classList.add("card-title");
-    cardTitle.value = "title"; //---------------
 
     let cardDate = document.createElement("input");
     cardDate.type = "date";
@@ -105,8 +105,8 @@ function newCard(todo){
     descriptionContainer.classList.add("description-container");
     let description = document.createElement("textarea");
     description.classList.add("edit-card");
-    description.classList.add("description")
-    description.value = "just some text";
+    description.classList.add("description");
+    description.placeholder = "description"; //------
     descriptionContainer.appendChild(description);
 
 
