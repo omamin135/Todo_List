@@ -79,6 +79,15 @@ function newCard(todo){
     let newCardBackground = document.createElement("div");
     newCardBackground.id = "new-card-back";
 
+    let closeCard = document.createElement("div");
+    closeCard.classList.add("edit-card");
+    closeCard.classList.add("close-button-container");
+    let p = document.createElement("p");
+    p.classList.add("edit-card");
+    p.classList.add("close-button");
+    p.textContent = "x";
+    closeCard.appendChild(p);
+
     let cardContainer = document.createElement("div");
     cardContainer.className = "new-card";
 
@@ -135,6 +144,7 @@ function newCard(todo){
     submit.id = "submit-card";
     submit.textContent = "add Todo";
 
+    cardContainer.appendChild(closeCard);
     cardContainer.appendChild(titleDateContainer);
     cardContainer.appendChild(descriptionContainer);
     cardContainer.appendChild(priorityContainer);

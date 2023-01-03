@@ -50,7 +50,7 @@ newProjectButton.addEventListener("click", () => {
 document.getElementById("new-todo").addEventListener("click", () => {
     newCard(Dir.projects[0].todo[0]);
     
-    document.getElementById("submit-card").onclick = function processNewCard(){
+    document.getElementById("submit-card").onclick = () => {
         
         let titleNode = document.querySelector(".edit-card.card-title");
         if (titleNode.checkValidity() && titleNode.value.length > 0){
@@ -60,9 +60,12 @@ document.getElementById("new-todo").addEventListener("click", () => {
                                  "high"
                                  ))
         removeEditCard();
-        console.log(Dir.activeProject());
         loadCard(Dir.activeProject().todo[Dir.activeProject().numItems-1]);
         }
+    }
+
+    document.querySelector(".edit-card.close-button").onclick = () => {
+        removeEditCard();
     }
 })
 
