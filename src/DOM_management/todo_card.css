@@ -13,11 +13,6 @@
     box-shadow: 2px 2px 3px var(--shadow);
 }
 
-.description-container {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-
 .card-title {
     font-size: 1rem;
     margin: 0px;
@@ -45,27 +40,48 @@
     font-size: 0.8rem;
 }
 
+.description-container {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+}
+
 .description {
     font-size: 0.8rem;
     margin-bottom: 0px;
-    margin-top: 13px;
+    margin-top: 0px;
+    width: 100%;
+    height: 75%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    overflow: hidden;
 }
 
-.expand {
-    margin-top: 7px;
-    font-size: 0.9rem;
+.overflow-marker {
+    position: absolute;
     color: gray;
+    font-size: 1.2rem;
+    margin: 0px;
+    margin-top: -5px;
 }
 
 .edit-container {
     position: relative;
+    color: gray;
 }
 
 .edit {
     height: 20px;
-    color: gray;
     position: absolute;
     bottom: 0px;
+    font-size: 0.8rem;
+}
+
+.expand {
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
     font-size: 0.8rem;
 }
 
@@ -184,6 +200,7 @@
     width: 100%;
     height: 200px;
     resize: none;
+    margin-top: 5px;
 }
 
 .edit-card.priority-container {

@@ -31,7 +31,5 @@ class Projects {
 }
 
 let Dir = new Projects();
-Dir.addToActive(new Todo("title", "12/31/2023", "Here is some text", "urgent"));
-
 
 export default Dir;

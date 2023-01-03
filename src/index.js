@@ -9,7 +9,6 @@ import {Todo, Project} from "./project_classes.js";
 loadPage();
 loadProjectsMenu(Dir);
 loadProjPage();
-loadCard(Dir.projects[0].todo[0]);
 
 
 /*
@@ -54,13 +53,13 @@ document.getElementById("new-todo").addEventListener("click", () => {
         
         let titleNode = document.querySelector(".edit-card.card-title");
         if (titleNode.checkValidity() && titleNode.value.length > 0){
-        Dir.addToActive(new Todo(titleNode.value,
-                                 document.querySelector(".edit-card.card-date").value,
-                                 document.querySelector(".edit-card.description").value,
-                                 "high"
-                                 ))
-        removeEditCard();
-        loadCard(Dir.activeProject().todo[Dir.activeProject().numItems-1]);
+            Dir.addToActive(new Todo(titleNode.value,
+                                    document.querySelector(".edit-card.card-date").value,
+                                    document.querySelector(".edit-card.description").value,
+                                    "high"
+                                    ))
+            removeEditCard();
+            loadCard(Dir.activeProject().todo[Dir.activeProject().numItems-1], Dir.activeProject().todo.length-1);
         }
     }
 

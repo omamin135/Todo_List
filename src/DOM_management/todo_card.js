@@ -1,10 +1,11 @@
 import script from "./todo_card.css";
 
 
-function loadCard(todo){
+function loadCard(todo, index){
 
     let cardContainer = document.createElement("div");
     cardContainer.className = "card";
+    cardContainer.setAttribute("data-index", index);
 
     let titleDateContainer = document.createElement("div");
     titleDateContainer.className = "title-date-container";
@@ -32,12 +33,17 @@ function loadCard(todo){
     descriptionContainer.className = "description-container";
     let description = document.createElement("p");
     description.className = "description";
-    description.textContent = todo.description;
-    let expand = document.createElement("p");
-    expand.className = "expand";
-    expand.textContent = "expand";  
+    let desc = todo.description;
+    let desclength = 200;
+    
+    if (desc.length > desclength){
+        desc = desc.substring(0, desclength);
+        desc += "   . . .";
+    }
+    description.textContent = desc;
+     
     descriptionContainer.appendChild(description);
-    descriptionContainer.appendChild(expand);
+    
 
     let editContainter = document.createElement("div");
     editContainter.className = "edit-container";
@@ -45,6 +51,10 @@ function loadCard(todo){
     edit.className = "edit";
     edit.textContent = "edit";
     editContainter.appendChild(edit);
+    let expand = document.createElement("p");
+    expand.className = "expand";
+    expand.textContent = "expand";
+    editContainter.appendChild(expand);
 
     let priorityContainer = document.createElement("div");
     priorityContainer.className = "priority-container";
@@ -71,6 +81,19 @@ function loadCard(todo){
     cardContainer.appendChild(priorityContainer);
 
     document.getElementById("cards-container").appendChild(cardContainer);
+
+    /* add ... to bottom of description if there is overflow */
+    let descBox = document.querySelector(`[data-index="${index}"]`).children[2];
+    if (descBox.firstChild.clientHeight < descBox.firstChild.scrollHeight){
+        let overflowMarker = document.createElement("p");
+        overflowMarker.textContent = " . . .";
+        overflowMarker.className = "overflow-marker";
+        descBox.appendChild(overflowMarker);
+
+    }
+    
+    
+
 }
 
 
